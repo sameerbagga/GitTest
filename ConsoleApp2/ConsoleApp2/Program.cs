@@ -17,7 +17,7 @@ namespace ConsoleApp2
             driver.Navigate().GoToUrl("https://www.google.com");
 
             IWebElement element = driver.FindElement(By.Name("q"));
-            element.SendKeys("execute this page \n");
+            element.SendKeys("execute this page");
         }
     }
 }
