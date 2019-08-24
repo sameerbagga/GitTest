@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,12 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is good");
+            IWebDriver driver = new ChromeDriver();
+
+            driver.Navigate().GoToUrl("https://www.google.com");
+
+            IWebElement element = driver.FindElement(By.Name("q"));
+            element.SendKeys("execute this page \n");
         }
     }
 }
